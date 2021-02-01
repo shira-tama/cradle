@@ -1,0 +1,955 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
+    
+    
+      
+        <title>Terraform - 基本 - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="white" data-md-color-accent="">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#terraform-" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header-nav__button md-logo" aria-label="My Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Terraform - 基本
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Welcome to MkDocs
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sample/test/" class="md-tabs__link">
+        Sample
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Terraform
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to MkDocs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
+        Sample
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Sample" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Sample
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sample/test/" class="md-nav__link">
+        This is Test Page.
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sample/writing_rule/" class="md-nav__link">
+        Writing Rule
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      
+      <label class="md-nav__link" for="nav-3">
+        Terraform
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Terraform" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          Terraform
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Terraform - 基本
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Terraform - 基本
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ファイル構成
+  </a>
+  
+    <nav class="md-nav" aria-label="ファイル構成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#providerstf" class="md-nav__link">
+    providers.tf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tf" class="md-nav__link">
+    *.tf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variablestf" class="md-nav__link">
+    variables.tf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraformtfstate" class="md-nav__link">
+    terraform.tfstate
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    コマンド
+  </a>
+  
+    <nav class="md-nav" aria-label="コマンド">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-init" class="md-nav__link">
+    terraform init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-plan" class="md-nav__link">
+    terraform plan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-apply" class="md-nav__link">
+    terraform apply
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    実行環境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    参考リンク
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    ファイル構成
+  </a>
+  
+    <nav class="md-nav" aria-label="ファイル構成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#providerstf" class="md-nav__link">
+    providers.tf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tf" class="md-nav__link">
+    *.tf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variablestf" class="md-nav__link">
+    variables.tf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraformtfstate" class="md-nav__link">
+    terraform.tfstate
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    コマンド
+  </a>
+  
+    <nav class="md-nav" aria-label="コマンド">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-init" class="md-nav__link">
+    terraform init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-plan" class="md-nav__link">
+    terraform plan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-apply" class="md-nav__link">
+    terraform apply
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    実行環境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    参考リンク
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="terraform-">Terraform - 基本</h1>
+<h2 id="_1">概要</h2>
+<ul>
+<li>インフラ構築や設定をコード(テンプレートファイル)を使って自動化するためのツール、いわゆるIaC</li>
+<li>多くのプロバイダ（クラウド / ツール）に対応している</li>
+<li>インフラ構成を宣言的に定義 <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> できることが特徴   </li>
+</ul>
+<h2 id="_2">ファイル構成</h2>
+<ul>
+<li>テンプレートファイル（.tf）に構成情報、プロバイダ情報<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>、変数等を記載していく</li>
+<li>tfファイルは、HCLというHashiCorp製の独自言語<ul>
+<li>とはいえ、実体は設定ファイル記述用DSLでJSONとも互換性あり</li>
+</ul>
+</li>
+<li>以下はサンプルのシンプルなディレクトリ構成<ul>
+<li>
+<p>実運用時は、環境(Prod / Dev 等)後にディレクトリを分ける等の考慮が必要<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>  </p>
+<div class="highlight"><pre><span></span><code>directory
+|- providers.tf          ：プロバイダ設定
+|- *.tf                  ：実行対象（ファイル名は任意）
+|- variables.tf          ：変数設定
+|- terraform.tfstate     ：リソースの現状を示すファイル（自動作成）
+</code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="providerstf">providers.tf</h3>
+<ul>
+<li>実行するterraformのバージョンを指定する<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></li>
+<li>
+<p>複数のプロバイダに対応しているため、どのプロバイダで構築するかを定義する  </p>
+<div class="highlight"><pre><span></span><code><span class="kc">terraf</span><span class="err">orm</span> <span class="p">{</span>
+    <span class="err">backe</span><span class="kc">n</span><span class="err">d</span> <span class="s2">&quot;s3&quot;</span> <span class="p">{</span>
+    <span class="err">bucke</span><span class="kc">t</span>                  <span class="err">=</span> <span class="s2">&quot;aws-terraform&quot;</span>
+    <span class="err">key</span>                     <span class="err">=</span> <span class="s2">&quot;path/terraform.tfstate&quot;</span>
+    <span class="err">regio</span><span class="kc">n</span>                  <span class="err">=</span> <span class="s2">&quot;ap-northeast-1&quot;</span>
+    <span class="err">shared_crede</span><span class="kc">nt</span><span class="err">ials_</span><span class="kc">f</span><span class="err">ile</span> <span class="err">=</span> <span class="s2">&quot;$HOME/.aws/credentials&quot;</span>
+    <span class="err">pro</span><span class="kc">f</span><span class="err">ile</span>                 <span class="err">=</span> <span class="s2">&quot;xxxxx&quot;</span>
+    <span class="p">}</span>
+    <span class="err">required_versio</span><span class="kc">n</span>        <span class="err">=</span> <span class="s2">&quot;&gt;=0.12&quot;</span>
+<span class="p">}</span>
+
+<span class="err">provider</span> <span class="err">aws</span> <span class="p">{</span>
+    <span class="err">shared_crede</span><span class="kc">nt</span><span class="err">ials_</span><span class="kc">f</span><span class="err">ile</span> <span class="err">=</span>  <span class="s2">&quot;$HOME/.aws/credentials&quot;</span>
+    <span class="err">pro</span><span class="kc">f</span><span class="err">ile</span>                 <span class="err">=</span>  <span class="s2">&quot;xxxxx&quot;</span>
+    <span class="err">regio</span><span class="kc">n</span>                  <span class="err">=</span> <span class="s2">&quot;ap-northeast-1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>上記の記述例ではプロバイダをAWSとしている</p>
+<ul>
+<li>認証情報も記述可能が、github等での管理を考慮し環境変数で定義する</li>
+<li><code>TF_VAR_&lt;変数名&gt;</code>という名称の環境変数で定義する</li>
+<li>
+<p><code>terraform</code>コマンド実行時にこの環境変数が読み込まれ、変数に値が代入される</p>
+<div class="highlight"><pre><span></span><code>$ export TF_VAR_access_key=&quot;AKIAXXXXXXXXXXXXXXXXXX&quot;
+$ export TF_VAR_secret_key=&quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;
+</code></pre></div>
+</li>
+<li>
+<p>複数アカウント環境では<code>shared_credentials_file</code>を利用可能</p>
+<ul>
+<li><code>profile</code>を利用してアカウントをスイッチ可能</li>
+</ul>
+</li>
+<li>後述の<code>terraform.tfstate</code>の出力先を<code>backend</code>で指定できる</li>
+<li>リソース管理に使われるファイルのため、ローカルは非推奨</li>
+<li>コンフリクト時の影響を考慮し、gitは非推奨</li>
+<li>ProviderがAWSのため、S3に配置している</li>
+</ul>
+</li>
+</ul>
+<h3 id="tf">*.tf</h3>
+<ul>
+<li>構築するリソース情報を定義する<ul>
+<li><code>resource "&lt;リースの種類&gt;" "&lt;リソース名&gt;" {}</code>　といった構文で指定</li>
+<li>&lt;リソース名&gt;は任意の名前を設定可能であり、用途を識別できるようにする</li>
+<li>ブロック中には<code>設定項目名 = 設定値</code>の形式で記述する</li>
+</ul>
+</li>
+<li>他リソースの情報を参照することも可能<ul>
+<li><code>&lt;リソースの種類&gt;.&lt;リソース名&gt;.&lt;属性名&gt;</code>で指定する</li>
+<li>依存関係はterraform側で制御されているので、原則、考慮不要</li>
+<li>
+<p>明示的に指定したい場合は、<code>depends_on</code>で指定する</p>
+<div class="highlight"><pre><span></span><code><span class="err">resource</span> <span class="s2">&quot;aws_vpc&quot;</span> <span class="s2">&quot;myVPC&quot;</span> <span class="p">{</span>
+    <span class="err">cidr_block</span> <span class="err">=</span> <span class="s2">&quot;10.1.0.0/16&quot;</span>
+    <span class="err">i</span><span class="kc">nstan</span><span class="err">ce_</span><span class="kc">tenan</span><span class="err">cy</span> <span class="err">=</span> <span class="s2">&quot;default&quot;</span>
+    <span class="err">e</span><span class="kc">na</span><span class="err">ble_d</span><span class="kc">ns</span><span class="err">_suppor</span><span class="kc">t</span> <span class="err">=</span> <span class="s2">&quot;true&quot;</span>
+    <span class="err">e</span><span class="kc">na</span><span class="err">ble_d</span><span class="kc">ns</span><span class="err">_hos</span><span class="kc">tna</span><span class="err">mes</span> <span class="err">=</span> <span class="s2">&quot;false&quot;</span>
+    <span class="kc">ta</span><span class="err">gs</span> <span class="p">{</span>
+        <span class="err">Name</span> <span class="err">=</span> <span class="s2">&quot;myVPC&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="err">resource</span> <span class="s2">&quot;aws_internet_gateway&quot;</span> <span class="s2">&quot;myGW&quot;</span> <span class="p">{</span>
+    <span class="err">vpc_id</span> <span class="err">=</span> <span class="s2">&quot;${aws_vpc.myVPC.id}&quot;</span> <span class="err">#</span> <span class="err">myVPCのid属性を参照</span>
+    <span class="err">depe</span><span class="kc">n</span><span class="err">ds_o</span><span class="kc">n</span> <span class="err">=</span> <span class="s2">&quot;${aws_vpc.myVPC}&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="variablestf">variables.tf</h3>
+<ul>
+<li>変数情報を外出しするためのテンプレートファイル<ul>
+<li>main.tf内で記述可能だが、可読性を考慮し別ファイルで管理することが多い</li>
+</ul>
+</li>
+<li>
+<p><code>variable &lt;変数名&gt; {}</code>で変数を定義する</p>
+<ul>
+<li><code>type</code><ul>
+<li>変数の型を定義する(String/List/Map など)</li>
+</ul>
+</li>
+<li><code>default</code><ul>
+<li>変数のデフォルト値</li>
+</ul>
+</li>
+<li><code>description</code><ul>
+<li>
+<p>対象変数の説明を示す（コメントのように利用する）</p>
+<div class="highlight"><pre><span></span><code><span class="err">variable</span> <span class="err">aws_i</span><span class="kc">nstan</span><span class="err">ce_</span><span class="kc">t</span><span class="err">ype</span> <span class="p">{</span>
+<span class="kc">t</span><span class="err">ype</span>        <span class="err">=</span> <span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="err">descrip</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span> <span class="err">=</span> <span class="s2">&quot;AWSインスタンス種別&quot;</span>
+<span class="err">de</span><span class="kc">fault</span>     <span class="err">=</span> <span class="s2">&quot;t2.micro&quot;</span>
+<span class="p">}</span>
+
+<span class="err">variable</span> <span class="err">aws_i</span><span class="kc">nstan</span><span class="err">ce_</span><span class="kc">ta</span><span class="err">g_</span><span class="kc">na</span><span class="err">me</span> <span class="p">{</span>
+<span class="kc">t</span><span class="err">ype</span>        <span class="err">=</span> <span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="err">descrip</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span> <span class="err">=</span> <span class="s2">&quot;AWSインスタンスタグ：Name&quot;</span>
+<span class="err">de</span><span class="kc">fault</span>     <span class="err">=</span> <span class="s2">&quot;terraform-tutorial&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>デフォルト値は以下のように別ファイルで値を定義し上書き可能</p>
+<ul>
+<li>
+<p>new_instance.tfvars</p>
+<div class="highlight"><pre><span></span><code>aws_instance_type = &quot;t3.micro&quot;
+aws_instance_tag_name = &quot;wrapper-tutorial&quot;
+</code></pre></div>
+</li>
+<li>
+<p>上書きする場合は<code>terrafrom plan -var-file=new_instance.tfvars</code>というように実行する</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="terraformtfstate">terraform.tfstate</h3>
+<ul>
+<li>Terraformが管理しているリソースの現在の状態を表すファイル<ul>
+<li>構築したリソースの現在の状態が管理されている</li>
+</ul>
+</li>
+<li>デフォルトではローカルにtfstateファイルが生成される<ul>
+<li>s3などのリモートバックエンドで管理することが多い<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup></li>
+</ul>
+</li>
+<li><code>terraform apply</code>を実行すると生成される<ul>
+<li>次回以降、<code>terraform plan</code>を実行時に前回実行時のリソース情報と差分が表示される</li>
+<li>実機との差分確認は行わないという設計方針<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup></li>
+</ul>
+</li>
+<li>リソースを分割≒コマンド実行単位を分割することで、更新頻度の高低でtfstateを分割できる</li>
+<li>
+<p>tfstateの実体は以下のようなjsonファイル（リソース：ECSのtfstate）</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+<span class="nt">&quot;terraform_version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.12.14&quot;</span><span class="p">,</span>
+<span class="nt">&quot;serial&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="nt">&quot;lineage&quot;</span><span class="p">:</span> <span class="s2">&quot;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&quot;</span><span class="p">,</span>
+<span class="nt">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">{},</span>
+<span class="nt">&quot;resources&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+    <span class="nt">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;module.ecs&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;mode&quot;</span><span class="p">:</span> <span class="s2">&quot;managed&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;aws_ecs_service&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;xxx-api&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;provider&quot;</span><span class="p">:</span> <span class="s2">&quot;provider.aws&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;instances&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+        <span class="nt">&quot;schema_version&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;cluster&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:ecs:ap-northeast-1:xxxxxxx:cluster/dev&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;desired_count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:ecs:ap-northeast-1:xxxxxxx:service/dev-xxx-api&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;launch_type&quot;</span><span class="p">:</span> <span class="s2">&quot;FARGATE&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;dev-xxx-api&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;task_definition&quot;</span><span class="p">:</span> <span class="s2">&quot;dev-xxx-api:1&quot;</span><span class="p">,</span>
+            <span class="err">...</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;dependencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;module.ecs_service.xxx-api.aws_ecs_task_definition.task&quot;</span>
+        <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="err">...</span>
+<span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+</ul>
+<h2 id="_3">コマンド</h2>
+<div class="highlight"><pre><span></span><code>$ terraform init  <span class="c1"># BackendとプロバイダのInitialize</span>
+$ terraform plan  <span class="c1"># 実行内容の確認、チェック</span>
+$ terraform apply <span class="c1"># 実行</span>
+</code></pre></div>
+<h3 id="terraform-init">terraform init</h3>
+<ul>
+<li>ワークスペースを初期化するコマンド</li>
+<li>Terraform を実行するためには、まず<code>terraform init</code> でワークスペースの初期化が必須</li>
+<li>.tf（テンプレート）ファイル内の plugin（aws provider など）のダウンロード処理などが走る</li>
+</ul>
+<h3 id="terraform-plan">terraform plan</h3>
+<ul>
+<li>Terraform による実行計画を参照するコマンド</li>
+<li>.tf（テンプレート）ファイルに情報を元に、どのようなリソースが 作成/修正/削除 されるかを参照可能</li>
+</ul>
+<h3 id="terraform-apply">terraform apply</h3>
+<ul>
+<li>.tf（テンプレート）ファイルに記載された情報を元にリソースを作成するコマンド </li>
+<li>リソースが作成後、 <code>terraform.tfstate</code> に、作成されたリソースに関連する情報が保存される</li>
+<li>2度目以降の実行後には、1世代前のものが <code>terraform.tfstate.backup</code> に保存される</li>
+<li>Terraform において、この状態を管理する <code>terraform.state</code> ファイルが非常に重要となるため、手動更新等は行わないこと</li>
+</ul>
+<h2 id="_4">実行環境</h2>
+<ul>
+<li>ローカル環境：<code>/Users/lynx/terraform</code></li>
+<li>リポジトリ / dockerはサンプルがまとまり次第作成する</li>
+</ul>
+<h2 id="_5">参考リンク</h2>
+<ul>
+<li>
+<p>terraform系</p>
+<ul>
+<li><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs">公式ドキュメント（AWS）</a></li>
+<li><a href="https://qiita.com/fukubaka0825/items/68506b1e6644404d6cc0">Terraform入門資料(v0.12.0対応)</a></li>
+<li><a href="https://qiita.com/reflet/items/de57ae767c8f368372ba">dockerでterraform環境を作る</a></li>
+<li><a href="https://dev.classmethod.jp/articles/terraform-network-variable/">Terraformで超サクッとループでリソースを用意する方法</a></li>
+<li><a href="https://blog.d-shimizu.io/article/1901"># Terraformでパスワードやシークレットキーを設定したIAMユーザーを作成する</a></li>
+<li><a href="https://upcloud.com/community/tutorials/terraform-variables/"># How to use Terraform variables</a></li>
+<li><a href="https://qiita.com/ymmy02/items/e7368abd8e3dafbc5c52"># Terraformの「ここはvariable使えないのか...」となった所</a></li>
+</ul>
+</li>
+<li>
+<p>他ノウハウ</p>
+<ul>
+<li><a href="http://www.nigauri.org/~iwamatsu/d/ja/2018/05/05/work-log/"># GPG の clearsign を久しぶりにやったらエラーになった</a></li>
+</ul>
+</li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>「t2.micro インスタンスを1つ」と書くだけで、作成手順を意識しなくてもその通りに出来上がるということ。手続き的に構築する必要がない&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Terraformとして、対応しているクラウドサービスやツール群のこと&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>ベストプラクティスは人によってまちまち？正解が分からない...&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>バージョンによっては破壊的な変更も多いようなので、定義しておいたほうが無難&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>ローカルだと意図しない変更や削除される可能性があるため&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://www.terraform.io/docs/state/purpose.html">https://www.terraform.io/docs/state/purpose.html</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../sample/writing_rule/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  前
+                </span>
+                Writing Rule
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
