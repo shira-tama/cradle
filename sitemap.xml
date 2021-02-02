@@ -8,7 +8,15 @@
      <lastmod>2021-02-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://tama-shira.github.io/terraform/terraform/</loc>
+     <loc>https://tama-shira.github.io/terraform/terraform-01-basic/</loc>
+     <lastmod>2021-02-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://tama-shira.github.io/terraform/terraform-02-providers/</loc>
+     <lastmod>2021-02-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://tama-shira.github.io/terraform/terraform-99-link/</loc>
      <lastmod>2021-02-02</lastmod>
      <changefreq>daily</changefreq>
     </url>

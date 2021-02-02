@@ -7,17 +7,19 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta name="google-site-verification" content="Es3DESAoOP2M5fvPpv1Qeqw9ImFwoVNZOyZIoqpFD_c" />
       
+        <meta name="description" content="providers.tfの記載内容を掘り下げます">
       
       
       
-        <link rel="canonical" href="https://tama-shira.github.io/sample/test/">
+      
+        <link rel="canonical" href="https://tama-shira.github.io/terraform/terraform-02-providers/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
     
     
       
-        <title>This is Test Page. - Shiratama's Note</title>
+        <title>02_Providers - Shiratama's Note</title>
       
     
     
@@ -67,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#this-is-test-page" class="md-skip">
+        <a href="#terraform-providers" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -99,7 +101,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              This is Test Page.
+              02_Providers
             
           </span>
         </div>
@@ -164,15 +166,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../sample/test/" class="md-tabs__link">
         Sample
       </a>
     </li>
@@ -182,13 +182,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../terraform/terraform-01-basic/" class="md-tabs__link">
+      <a href="../terraform-01-basic/" class="md-tabs__link md-tabs__link--active">
         Terraform
       </a>
     </li>
@@ -249,14 +251,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
       
       <label class="md-nav__link" for="nav-2">
         Sample
@@ -273,49 +273,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          This is Test Page.
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../sample/test/" class="md-nav__link">
         This is Test Page.
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#test" class="md-nav__link">
-    Test
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -332,12 +294,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
       
       <label class="md-nav__link" for="nav-3">
         Terraform
@@ -356,7 +320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terraform/terraform-01-basic/" class="md-nav__link">
+      <a href="../terraform-01-basic/" class="md-nav__link">
         01_基本
       </a>
     </li>
@@ -366,11 +330,77 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../terraform/terraform-02-providers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          02_Providers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         02_Providers
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    全体
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terraform" class="md-nav__link">
+    terraform {}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provider-aws" class="md-nav__link">
+    provider "aws" {}`
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    留意事項
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -380,7 +410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terraform/terraform-99-link/" class="md-nav__link">
+      <a href="../terraform-99-link/" class="md-nav__link">
         99_リンク集
       </a>
     </li>
@@ -418,8 +448,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#test" class="md-nav__link">
-    Test
+  <a href="#_1" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    全体
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terraform" class="md-nav__link">
+    terraform {}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provider-aws" class="md-nav__link">
+    provider "aws" {}`
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    留意事項
   </a>
   
 </li>
@@ -437,61 +495,66 @@
               
                 
                 
-                <h1 id="this-is-test-page">This is Test Page.</h1>
-<h2 id="test">Test</h2>
-<ul>
+                <h1 id="terraform-providers">Terraform - Providers</h1>
+<h2 id="_1">概要</h2>
+<p><code>providers.tf</code>に記載すべき内容について、詳細をまとめたページです<br />
+主に<code>terraform {}</code>と<code>provider "aws" {}</code>についての記述内容や留意事項を記載します</p>
+<h2 id="_2">全体</h2>
+<div class="highlight"><pre><span></span><code><span class="kc">terraf</span><span class="err">orm</span> <span class="p">{</span>
+    <span class="err">required_versio</span><span class="kc">n</span> <span class="err">=</span> <span class="s2">&quot;&gt;=0.12&quot;</span>
+    <span class="err">backe</span><span class="kc">n</span><span class="err">d</span> <span class="s2">&quot;s3&quot;</span> <span class="p">{</span>
+        <span class="err">bucke</span><span class="kc">t</span>                  <span class="err">=</span> <span class="s2">&quot;backet&quot;</span>
+        <span class="err">regio</span><span class="kc">n</span>                  <span class="err">=</span> <span class="s2">&quot;ap-northeast-1&quot;</span>
+        <span class="err">shared_crede</span><span class="kc">nt</span><span class="err">ials_</span><span class="kc">f</span><span class="err">ile</span> <span class="err">=</span> <span class="s2">&quot;$HOME/.aws/credential&quot;</span>
+        <span class="err">pro</span><span class="kc">f</span><span class="err">ile</span>                 <span class="err">=</span> <span class="s2">&quot;xxx&quot;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="err">provider</span> <span class="s2">&quot;aws&quot;</span> <span class="p">{</span>
+  <span class="err">shared_crede</span><span class="kc">nt</span><span class="err">ials_</span><span class="kc">f</span><span class="err">ile</span> <span class="err">=</span> <span class="s2">&quot;$HOME/.aws/credential&quot;</span>
+  <span class="err">pro</span><span class="kc">f</span><span class="err">ile</span>                 <span class="err">=</span> <span class="s2">&quot;yyy&quot;</span>
+  <span class="err">regio</span><span class="kc">n</span>                  <span class="err">=</span> <span class="s2">&quot;ap-northeast-1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="terraform"><code>terraform {}</code></h2>
+<p>Terraformのバージョン指定 / バックエンドの設定をしています</p>
+<ol>
 <li>
-<p>sample</p>
+<p>バージョン指定  </p>
+<p>Terraformは現在も開発が継続されており、頻繁にバージョンアップが実施されています<br />
+バージョンによってはリソースの構文が大きく変わっている可能性があるため、それを定義する</p>
 </li>
 <li>
-<p>キー表示<br />
-<span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-space">Space</kbd></span></p>
+<p>バックエンド指定  </p>
+<p>基本ページに記載したとおり、terraform.tfsateには実行時のリソース等を追記されている<br />
+通常はTerraformの作成した場合はローカル環境に出力される
+git等を利用してバージョン管理を実施したいがコンフリクトの発生を避けるため、プロバイダに準じた環境へバックエンドを指定するのがよい</p>
 </li>
+</ol>
+<h2 id="provider-aws">provider "aws" {}`</h2>
+<p>Providerとして、AWSの利用する場合の認証情報についての設定をしています</p>
+<ol>
 <li>
-<p>codehilite<br />
-    <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
-                <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-</code></pre></div></p>
+<p>認証情報</p>
+<p>AWSへの各種操作を実施するための認証情報を記載します
+IAMロールがアタッチされたインスタンスやCloudShellのような環境であれば、リージョンのみを指定すれば動作します
+AssumeRoleやprofileで認証情報を管理している場合には、<code>shared_credentials_file</code>を利用して<code>profile</code>でプロファイルを指定します</p>
 </li>
-<li>
-<p>注釈 </p>
-</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>これはノートです。</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>ヒントです。</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>これは警告です</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>これは危険です。</p>
-</div>
-<div class="admonition success">
-<p class="admonition-title">Success</p>
-<p>これは成功です。</p>
-</div>
-<div class="admonition failure">
-<p class="admonition-title">Failure</p>
-<p>これは失敗です。</p>
-</div>
-<div class="admonition bug">
-<p class="admonition-title">Bug</p>
-<p>これはバグです。</p>
-</div>
-<div class="admonition summary">
-<p class="admonition-title">Summary</p>
-<p>これは概要です。</p>
-</div>
+</ol>
+<h2 id="_3">留意事項</h2>
+<p>Providersにも<code>variables.tf</code>を利用すれば、変数を指定可能そうだが指定することができない<br />
+環境ごとに設定を変更したい等の要件があれば、  以下の方針で対応する  </p>
+<ol>
+<li>ハードコーディング  </li>
+<li><code>terraform init</code>を実行する際にオプション<code>-backend-config</code>で指定する<br />
+■実行例<br />
+<code>$ terraform init -backend-config='key=aaa/bbb'</code><br />
+これでprovides.tfに記載のバケットに対して、引数で渡したkey情報が付与される
+　</li>
+</ol>
+                
+                  
                 
               
               
@@ -510,7 +573,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../.." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../terraform-01-basic/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -519,19 +582,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                Welcome to shiratama's Note.
+                01_基本
               </div>
             </div>
           </a>
         
         
-          <a href="../../terraform/terraform-01-basic/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../terraform-99-link/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                01_基本
+                99_リンク集
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

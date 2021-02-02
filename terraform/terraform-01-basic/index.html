@@ -7,17 +7,19 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta name="google-site-verification" content="Es3DESAoOP2M5fvPpv1Qeqw9ImFwoVNZOyZIoqpFD_c" />
       
+        <meta name="description" content="Terraformを扱う上での基本となる情報をまとめています">
       
       
       
-        <link rel="canonical" href="https://tama-shira.github.io/terraform/terraform/">
+      
+        <link rel="canonical" href="https://tama-shira.github.io/terraform/terraform-01-basic/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
     
     
       
-        <title>Terraform - 基本 - Shiratama's Note</title>
+        <title>01_基本 - Shiratama's Note</title>
       
     
     
@@ -99,7 +101,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Terraform - 基本
+              01_基本
             
           </span>
         </div>
@@ -327,12 +329,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Terraform - 基本
+          01_基本
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Terraform - 基本
+        01_基本
       </a>
       
         
@@ -430,17 +432,34 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    参考リンク
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform-02-providers/" class="md-nav__link">
+        02_Providers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform-99-link/" class="md-nav__link">
+        99_リンク集
+      </a>
     </li>
   
 
@@ -557,13 +576,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    参考リンク
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -582,7 +594,7 @@
 <p>インフラ構築や設定をコード(テンプレートファイル)を使って自動化するためのツール、いわゆるIaCです<br />
 多くのプロバイダ（クラウド / ツール）に対応しており、インフラ構成を宣言的に定義 <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> できることが特徴です</p>
 <h2 id="_2">ファイル構成</h2>
-<p>terraformでは、基本的に<code>xxx.tf</code>という拡張子：<code>tf</code>で定義された情報に従って各種リソースを構築します<br />
+<p>Terraformでは、基本的に<code>xxx.tf</code>という拡張子：<code>tf</code>で定義された情報に従って各種リソースを構築します<br />
 単一ファイルにすべてを定義することも可能ですが、分離することが一般的です  </p>
 <p>以下、ファイル構成の基本を記述します。</p>
 <ul>
@@ -605,7 +617,7 @@
 </li>
 </ul>
 <h3 id="providerstf">providers.tf</h3>
-<p>実行するterraformのバージョンを指定<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>したり、プロバイダを指定する  </p>
+<p>実行するTerraformのバージョンを指定<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>したり、プロバイダを指定する  </p>
 <ul>
 <li>
 <p>複数のプロバイダに対応しているため、どのプロバイダで構築するかを定義する<br />
@@ -658,7 +670,7 @@ $ export TF_VAR_secret_key=&quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;
 <li>ProviderがAWSであれば、S3/DynamoDBに配置するのが一般的  </li>
 </ul>
 <h3 id="maintf">main.tf</h3>
-<p>terraformにて、構築するリソース情報を定義する  </p>
+<p>Terraformにて、構築するリソース情報を定義する  </p>
 <ul>
 <li><code>resource "&lt;リースの種類&gt;" "&lt;リソース名&gt;" {}</code>　といった構文で指定  </li>
 <li>&lt;リソース名&gt;は任意の名前を設定可能であり、用途を識別できるようにする  </li>
@@ -667,7 +679,7 @@ $ export TF_VAR_secret_key=&quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;
 <p>定義済みの他リソースの情報を参照することも可能</p>
 <ul>
 <li><code>&lt;リソースの種類&gt;.&lt;リソース名&gt;.&lt;属性名&gt;</code>で指定する  </li>
-<li>依存関係はterraform側で制御されているので、原則、考慮不要  </li>
+<li>依存関係はTerraform側で制御されているので、原則、考慮不要  </li>
 <li>
 <p>明示的に指定したい場合は、<code>depends_on</code>で指定する  </p>
 <p><div class="highlight"><pre><span></span><code><span class="err">resource</span> <span class="s2">&quot;aws_security_group&quot;</span> <span class="s2">&quot;allow_tls&quot;</span> <span class="p">{</span>
@@ -780,7 +792,7 @@ $ export TF_VAR_secret_key=&quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;
 </li>
 </ul>
 <h2 id="_3">コマンド</h2>
-<p>terraformで構築を行う際の基本的なコマンドについて、説明します</p>
+<p>Terraformで構築を行う際の基本的なコマンドについて、説明します</p>
 <div class="highlight"><pre><span></span><code>$ terraform init  <span class="c1"># BackendとプロバイダのInitialize</span>
 $ terraform plan  <span class="c1"># 実行内容の確認、チェック</span>
 $ terraform apply <span class="c1"># 実行</span>
@@ -802,27 +814,6 @@ $ terraform apply <span class="c1"># 実行</span>
 <li>リソースが作成後、 <code>terraform.tfstate</code> に、作成されたリソースに関連する情報が保存される</li>
 <li>2度目以降の実行後には、1世代前のものが <code>terraform.tfstate.backup</code> に保存される</li>
 <li>Terraform において、この状態を管理する <code>terraform.state</code> ファイルが非常に重要となるため、手動更新等は行わないこと</li>
-</ul>
-<h2 id="_4">参考リンク</h2>
-<ul>
-<li>
-<p>terraform系</p>
-<ul>
-<li><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs">公式ドキュメント（AWS）</a></li>
-<li><a href="https://qiita.com/fukubaka0825/items/68506b1e6644404d6cc0">Terraform入門資料(v0.12.0対応)</a></li>
-<li><a href="https://qiita.com/reflet/items/de57ae767c8f368372ba">dockerでterraform環境を作る</a></li>
-<li><a href="https://dev.classmethod.jp/articles/terraform-network-variable/">Terraformで超サクッとループでリソースを用意する方法</a></li>
-<li><a href="https://blog.d-shimizu.io/article/1901"># Terraformでパスワードやシークレットキーを設定したIAMユーザーを作成する</a></li>
-<li><a href="https://upcloud.com/community/tutorials/terraform-variables/"># How to use Terraform variables</a></li>
-<li><a href="https://qiita.com/ymmy02/items/e7368abd8e3dafbc5c52"># Terraformの「ここはvariable使えないのか...」となった所</a></li>
-</ul>
-</li>
-<li>
-<p>他ノウハウ</p>
-<ul>
-<li><a href="http://www.nigauri.org/~iwamatsu/d/ja/2018/05/05/work-log/"># GPG の clearsign を久しぶりにやったらエラーになった</a></li>
-</ul>
-</li>
 </ul>
 <div class="footnote">
 <hr />
@@ -847,6 +838,8 @@ $ terraform apply <span class="c1"># 実行</span>
 </li>
 </ol>
 </div>
+                
+                  
                 
               
               
@@ -879,6 +872,20 @@ $ terraform apply <span class="c1"># 実行</span>
             </div>
           </a>
         
+        
+          <a href="../terraform-02-providers/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  次
+                </span>
+                02_Providers
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>
