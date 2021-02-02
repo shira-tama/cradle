@@ -501,7 +501,7 @@
 主に<code>terraform {}</code>と<code>provider "aws" {}</code>についての記述内容や留意事項を記載します</p>
 <h2 id="_2">全体</h2>
 <div class="highlight"><pre><span></span><code><span class="kc">terraf</span><span class="err">orm</span> <span class="p">{</span>
-    <span class="err">required_versio</span><span class="kc">n</span> <span class="err">=</span> <span class="s2">&quot;&gt;=0.12&quot;</span>
+    <span class="err">required_versio</span><span class="kc">n</span> <span class="err">=</span> <span class="s2">&quot;&gt;=0.13&quot;</span>
     <span class="err">backe</span><span class="kc">n</span><span class="err">d</span> <span class="s2">&quot;s3&quot;</span> <span class="p">{</span>
         <span class="err">bucke</span><span class="kc">t</span>                  <span class="err">=</span> <span class="s2">&quot;backet&quot;</span>
         <span class="err">regio</span><span class="kc">n</span>                  <span class="err">=</span> <span class="s2">&quot;ap-northeast-1&quot;</span>
@@ -523,13 +523,16 @@
 <li>
 <p>バージョン指定  </p>
 <p>Terraformは現在も開発が継続されており、頻繁にバージョンアップが実施されています<br />
-バージョンによってはリソースの構文が大きく変わっている可能性があるため、それを定義する</p>
+バージョンによってはリソースの構文が大きく変わっている可能性があり、既存定義がエラーとなる可能性があります<br />
+それを回避するために実行バージョンを指定します</p>
 </li>
 <li>
 <p>バックエンド指定  </p>
-<p>基本ページに記載したとおり、terraform.tfsateには実行時のリソース等を追記されている<br />
-通常はTerraformの作成した場合はローカル環境に出力される
-git等を利用してバージョン管理を実施したいがコンフリクトの発生を避けるため、プロバイダに準じた環境へバックエンドを指定するのがよい</p>
+<p>基本ページに記載したとおり、<code>terraform.tfsate</code>には実行時のリソースの構成情報が追記されている<br />
+通常はTerraformの作成した場合はローカル環境に<code>terraform.tfstate</code>が出力されます<br />
+git等を利用してバージョン管理を実施したいところですが、コンフリクト等が発生すると正しくリソースが作成できません<br />
+そこでプロバイダに準じた環境へバックエンドを指定することが推奨されています<br />
+AWS環境ではS3 / DynamoDB等を指定し、そこで<code>terraform.tfstate</code>を管理します</p>
 </li>
 </ol>
 <h2 id="provider-aws">provider "aws" {}`</h2>
@@ -537,9 +540,9 @@ git等を利用してバージョン管理を実施したいがコンフリク�
 <ol>
 <li>
 <p>認証情報</p>
-<p>AWSへの各種操作を実施するための認証情報を記載します
-IAMロールがアタッチされたインスタンスやCloudShellのような環境であれば、リージョンのみを指定すれば動作します
-AssumeRoleやprofileで認証情報を管理している場合には、<code>shared_credentials_file</code>を利用して<code>profile</code>でプロファイルを指定します</p>
+<p>AWSへの各種操作を実施するための認証情報を記載します<br />
+IAMロールがアタッチされたインスタンスやCloudShellのような環境であれば、リージョンのみを指定すれば動作します<br />
+AssumeRoleやprofileなどで認証情報を管理している場合には、<code>shared_credentials_file</code>を利用して<code>profile</code>でプロファイルを指定します</p>
 </li>
 </ol>
 <h2 id="_3">留意事項</h2>
@@ -549,7 +552,7 @@ AssumeRoleやprofileで認証情報を管理している場合には、<code>sha
 <li>ハードコーディング  </li>
 <li><code>terraform init</code>を実行する際にオプション<code>-backend-config</code>で指定する<br />
 ■実行例<br />
-<code>$ terraform init -backend-config='key=aaa/bbb'</code><br />
+<code>$ terraform init -backend-config='key=aaa/bbb/terraform.tfstate'</code><br />
 これでprovides.tfに記載のバケットに対して、引数で渡したkey情報が付与される
 　</li>
 </ol>
