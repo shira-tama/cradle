@@ -529,25 +529,25 @@
 <li>
 <p>バックエンド指定  </p>
 <p>基本ページに記載したとおり、<code>terraform.tfsate</code>には実行時のリソースの構成情報が追記されている<br />
-通常はTerraformの作成した場合はローカル環境に<code>terraform.tfstate</code>が出力されます<br />
+通常、作成した場合はローカル環境に<code>terraform.tfstate</code>が出力されます<br />
 git等を利用してバージョン管理を実施したいところですが、コンフリクト等が発生すると正しくリソースが作成できません<br />
 そこでプロバイダに準じた環境へバックエンドを指定することが推奨されています<br />
 AWS環境ではS3 / DynamoDB等を指定し、そこで<code>terraform.tfstate</code>を管理します</p>
 </li>
 </ol>
 <h2 id="provider-aws">provider "aws" {}`</h2>
-<p>Providerとして、AWSの利用する場合の認証情報についての設定をしています</p>
+<p>ProviderにAWS環境を指定する場合の認証情報を定義します</p>
 <ol>
 <li>
 <p>認証情報</p>
 <p>AWSへの各種操作を実施するための認証情報を記載します<br />
 IAMロールがアタッチされたインスタンスやCloudShellのような環境であれば、リージョンのみを指定すれば動作します<br />
-AssumeRoleやprofileなどで認証情報を管理している場合には、<code>shared_credentials_file</code>を利用して<code>profile</code>でプロファイルを指定します</p>
+AssumeRoleやprofileなどで認証情報を管理している場合には、<code>shared_credentials_file</code>でcredengialファイルを、<code>profile</code>でプロファイルを指定します</p>
 </li>
 </ol>
 <h2 id="_3">留意事項</h2>
-<p>Providersにも<code>variables.tf</code>を利用すれば、変数を指定可能そうだが指定することができない<br />
-環境ごとに設定を変更したい等の要件があれば、  以下の方針で対応する  </p>
+<p>Providersにも<code>variables.tf</code>を利用すれば、変数を指定できそうだが指定するとエラーとなる  <br />
+環境ごとに設定を変更したい等の変数を使用したい場合は、以下の方法で対応する  </p>
 <ol>
 <li>ハードコーディング  </li>
 <li><code>terraform init</code>を実行する際にオプション<code>-backend-config</code>で指定する<br />
