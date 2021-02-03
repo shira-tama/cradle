@@ -371,7 +371,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    全体
+    全体像
   </a>
   
 </li>
@@ -385,7 +385,7 @@
       
         <li class="md-nav__item">
   <a href="#provider-aws" class="md-nav__link">
-    provider "aws" {}`
+    provider "aws" {}
   </a>
   
 </li>
@@ -456,7 +456,7 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    全体
+    全体像
   </a>
   
 </li>
@@ -470,7 +470,7 @@
       
         <li class="md-nav__item">
   <a href="#provider-aws" class="md-nav__link">
-    provider "aws" {}`
+    provider "aws" {}
   </a>
   
 </li>
@@ -499,7 +499,7 @@
 <h2 id="_1">概要</h2>
 <p><code>providers.tf</code>に記載すべき内容について、詳細をまとめたページです<br />
 主に<code>terraform {}</code>と<code>provider "aws" {}</code>についての記述内容や留意事項を記載します</p>
-<h2 id="_2">全体</h2>
+<h2 id="_2">全体像</h2>
 <div class="highlight"><pre><span></span><code><span class="kc">terraf</span><span class="err">orm</span> <span class="p">{</span>
     <span class="err">required_versio</span><span class="kc">n</span> <span class="err">=</span> <span class="s2">&quot;&gt;=0.13&quot;</span>
     <span class="err">backe</span><span class="kc">n</span><span class="err">d</span> <span class="s2">&quot;s3&quot;</span> <span class="p">{</span>
@@ -531,31 +531,41 @@
 <p>基本ページに記載したとおり、<code>terraform.tfsate</code>には実行時のリソースの構成情報が追記されている<br />
 通常、作成した場合はローカル環境に<code>terraform.tfstate</code>が出力されます<br />
 git等を利用してバージョン管理を実施したいところですが、コンフリクト等が発生すると正しくリソースが作成できません<br />
-そこでプロバイダに準じた環境へバックエンドを指定することが推奨されています<br />
-AWS環境ではS3 / DynamoDB等を指定し、そこで<code>terraform.tfstate</code>を管理します</p>
+そこでプロバイダに準じた環境へバックエンドを指定することが推奨<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>されています<br />
+AWS環境ではS3<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> / DynamoDB等を指定し、そこで<code>terraform.tfstate</code>を管理します</p>
 </li>
 </ol>
-<h2 id="provider-aws">provider "aws" {}`</h2>
+<h2 id="provider-aws"><code>provider "aws" {}</code></h2>
 <p>ProviderにAWS環境を指定する場合の認証情報を定義します</p>
 <ol>
 <li>
 <p>認証情報</p>
 <p>AWSへの各種操作を実施するための認証情報を記載します<br />
 IAMロールがアタッチされたインスタンスやCloudShellのような環境であれば、リージョンのみを指定すれば動作します<br />
-AssumeRoleやprofileなどで認証情報を管理している場合には、<code>shared_credentials_file</code>でcredengialファイルを、<code>profile</code>でプロファイルを指定します</p>
+AssumeRoleやprofileなどで認証情報を管理している場合には、<code>shared_credentials_file</code>でcredentialファイルを、<code>profile</code>でプロファイルを指定します</p>
 </li>
 </ol>
 <h2 id="_3">留意事項</h2>
-<p>Providersにも<code>variables.tf</code>を利用すれば、変数を指定できそうだが指定するとエラーとなる  <br />
-環境ごとに設定を変更したい等の変数を使用したい場合は、以下の方法で対応する  </p>
+<p>Providersにも<code>variables.tf</code>を利用すれば、変数を指定できそうだが指定するとエラーとなります  <br />
+環境ごとに設定を変更したい等の変数を使用したい場合は、以下の方法で対応します  </p>
 <ol>
 <li>ハードコーディング  </li>
-<li><code>terraform init</code>を実行する際にオプション<code>-backend-config</code>で指定する<br />
+<li><code>terraform init</code>を実行する際にオプション<code>-backend-config</code>で指定します<br />
 ■実行例<br />
 <code>$ terraform init -backend-config='key=aaa/bbb/terraform.tfstate'</code><br />
-これでprovides.tfに記載のバケットに対して、引数で渡したkey情報が付与される
-　</li>
+これでprovides.tfに記載のバケットに対して、引数で渡したkey情報が付与される</li>
 </ol>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>バージョニングを有効にして利用する&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
                 
                   
                 
