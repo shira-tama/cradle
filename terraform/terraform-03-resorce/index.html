@@ -7,22 +7,26 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta name="google-site-verification" content="Es3DESAoOP2M5fvPpv1Qeqw9ImFwoVNZOyZIoqpFD_c" />
       
+        <meta name="description" content="リソースの記述内容を掘り下げます">
       
       
       
-      <link rel="shortcut icon" href="assets/images/favicon.png">
+      
+        <link rel="canonical" href="https://tama-shira.github.io/terraform/terraform-03-resorce/">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.7">
     
     
       
-        <title>Shiratama's Note</title>
+        <title>03_Resource - Shiratama's Note</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
         
           
           
@@ -41,7 +45,7 @@
     
     
     
-      <link rel="stylesheet" href="css/custom.css">
+      <link rel="stylesheet" href="../../css/custom.css">
     
     
       
@@ -63,6 +67,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#terraform-resource" class="md-skip">
+          コンテンツにスキップ
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -92,7 +101,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              
+              03_Resource
             
           </span>
         </div>
@@ -148,7 +157,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Welcome to shiratama's Note.
     </a>
   </li>
@@ -163,7 +172,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="sample/test/" class="md-tabs__link">
+      <a href="../../sample/test/" class="md-tabs__link">
         Sample
       </a>
     </li>
@@ -173,13 +182,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="terraform/terraform-01-basic/" class="md-tabs__link">
+      <a href="../terraform-01-basic/" class="md-tabs__link md-tabs__link--active">
         Terraform
       </a>
     </li>
@@ -227,7 +238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Welcome to shiratama's Note.
       </a>
     </li>
@@ -264,7 +275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sample/test/" class="md-nav__link">
+      <a href="../../sample/test/" class="md-nav__link">
         This is Test Page.
       </a>
     </li>
@@ -283,12 +294,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
       
       <label class="md-nav__link" for="nav-3">
         Terraform
@@ -307,7 +320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="terraform/terraform-01-basic/" class="md-nav__link">
+      <a href="../terraform-01-basic/" class="md-nav__link">
         01_基本
       </a>
     </li>
@@ -319,7 +332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="terraform/terraform-02-providers/" class="md-nav__link">
+      <a href="../terraform-02-providers/" class="md-nav__link">
         02_Providers
       </a>
     </li>
@@ -329,11 +342,70 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="terraform/terraform-03-resorce/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          03_Resource
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         03_Resource
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    全体像
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    基本構文
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    変数
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -343,7 +415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="terraform/terraform-99-link/" class="md-nav__link">
+      <a href="../terraform-99-link/" class="md-nav__link">
         99_リンク集
       </a>
     </li>
@@ -363,11 +435,110 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    全体像
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    基本構文
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    変数
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+                
+                
+                <h1 id="terraform-resource">Terraform - Resource</h1>
+<h2 id="_1">概要</h2>
+<p><code>main.tf</code>などresourceとして定義する内容について、詳細をまとめます</p>
+<h2 id="_2">全体像</h2>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h2 id="_3">基本構文</h2>
+<p><code>resource "&lt;リースの種類&gt;" "&lt;リソース名&gt;" {・・・}</code>の形式でリソースを定義します  </p>
+<ol>
+<li>
+<p>&lt;リソースの種類&gt;    </p>
+<p>構築したいインフラストラクチャオブジェクトを定義します<br />
+プロバイダ毎に定義されているので、<a href="https://registry.terraform.io">ドキュメント</a>を参照して記述します  </p>
+</li>
+<li>
+<p>&lt;リソース名&gt;  </p>
+<p>Terraform上でリソース情報を管理するための名称となります<br />
+実環境に反映されるといったことはありません
+各リソースを管理するため、実行単位で一意である必要があります  </p>
+</li>
+<li>
+<p>{・・・}</p>
+<p>リソース毎にパラメータを記述します<br />
+構築したいリソースがどのようなパラメータを持つかはドキュメントを参照します<br />
+記述方法よりもTerraforn以前に構築対象をどれだけ理解できているかが重要です<br />
+実際に手動で構築してみて設定した内容とドキュメントのパラメータを照らし合わせるとより理解が進みます<br />
+なお、パラメータによってデフォルト値が定義されていますが、プロバイダ側のデフォルト値と異なるケースもあるので留意します  </p>
+</li>
+</ol>
+<h2 id="_4">変数</h2>
+<p>リソースに指定するパラメータの値は変数を利用できます  <br />
+リソースと同一ファイル上で記述できますが、管理が煩雑になるために分離することが一般的です<br />
+変数についての詳細は、<a href="https://tama-shira.github.io/note/terraform/terraform-04-variables/">04_Variables</a>で説明します  </p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1"></li>
+</ol>
+</div>
+                
+                  
+                
+              
+              
+                
+
 
               
             </article>
@@ -377,6 +548,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../terraform-02-providers/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  前
+                </span>
+                02_Providers
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../terraform-99-link/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  次
+                </span>
+                99_リンク集
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -394,15 +600,15 @@
       
     </div>
     
-      <script src="assets/javascripts/vendor.53cc9318.min.js"></script>
-      <script src="assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "",
+          base: "../..",
           features: ['navigation.tabs'],
           search: Object.assign({
-            worker: "assets/javascripts/worker/search.9c0e82ba.min.js"
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
