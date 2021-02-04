@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta name="google-site-verification" content="Es3DESAoOP2M5fvPpv1Qeqw9ImFwoVNZOyZIoqpFD_c" />
       
-        <meta name="description" content="しらたまのおべんきょーログまとめサイト！">
+        <meta name="description" content="リソースのパラメータに変数を指定する方法を掘り下げます">
       
       
       
@@ -19,7 +19,7 @@
     
     
       
-        <title>Terraform 04 variables - Shiratama's Note</title>
+        <title>04_Variables - Shiratama's Note</title>
       
     
     
@@ -59,7 +59,7 @@
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="shiratama" />
       <meta name="twitter:creator" content="shiratama" />
-      <meta name="twitter:title" content="Shiratama's Note - Terraform 04 variables" />
+      <meta name="twitter:title" content="Shiratama's Note - 04_Variables" />
       <meta name="twitter:description" content="しらたまのおべんきょーログまとめサイト！" />
       <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/37266415?s=460&u=65897fa1008e77067fd7cab115685af7703731df&v=4" />
     
@@ -80,6 +80,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#terraform-variables" class="md-skip">
+          コンテンツにスキップ
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -109,7 +114,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Terraform 04 variables
+              04_Variables
             
           </span>
         </div>
@@ -166,25 +171,9 @@
 
   <li class="md-tabs__item">
     <a href="../.." class="md-tabs__link">
-      Welcome to shiratama's Note.
+      Welcome
     </a>
   </li>
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../sample/test/" class="md-tabs__link">
-        Sample
-      </a>
-    </li>
-  
 
       
         
@@ -200,6 +189,22 @@
     <li class="md-tabs__item">
       <a href="../terraform-01-basic/" class="md-tabs__link md-tabs__link--active">
         Terraform
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/test/" class="md-tabs__link">
+        サンプル
       </a>
     </li>
   
@@ -247,51 +252,8 @@
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Welcome to shiratama's Note.
+        Welcome
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
-      
-      <label class="md-nav__link" for="nav-2">
-        Sample
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Sample" data-md-level="1">
-        <label class="md-nav__title" for="nav-2">
-          <span class="md-nav__icon md-icon"></span>
-          Sample
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../sample/test/" class="md-nav__link">
-        This is Test Page.
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -309,14 +271,14 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
       
-      <label class="md-nav__link" for="nav-3">
+      <label class="md-nav__link" for="nav-2">
         Terraform
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Terraform" data-md-level="1">
-        <label class="md-nav__title" for="nav-3">
+        <label class="md-nav__title" for="nav-2">
           <span class="md-nav__icon md-icon"></span>
           Terraform
         </label>
@@ -369,10 +331,48 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          04_Variables
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Terraform 04 variables
+        04_Variables
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    全体像
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -396,6 +396,49 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
+        サンプル
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="サンプル" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          サンプル
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/test/" class="md-nav__link">
+        This is Test Page.
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -403,15 +446,81 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    全体像
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Terraform 04 variables</h1>
+                <h1 id="terraform-variables">Terraform - Variables</h1>
+<h2 id="_1">概要</h2>
+<p><code>variables.tf</code>でリソースに指定するパラメータの値を変数として定義する方法について、詳細をまとめます  </p>
+<h2 id="_2">全体像</h2>
+<p>以下にリソース：VPCのCIDRに変数を指定する例を示します  </p>
+<ul>
+<li>
+<p>variables.tf  </p>
+<div class="highlight"><pre><span></span><code><span class="err">variables</span> <span class="s2">&quot;vpc-cidr&quot;</span> <span class="p">{</span>
+    <span class="kc">t</span><span class="err">ype</span>        <span class="err">=</span> <span class="s2">&quot;String&quot;</span>
+    <span class="err">descrip</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span> <span class="err">=</span> <span class="s2">&quot;VPCのCIDR&quot;</span>
+    <span class="err">de</span><span class="kc">fault</span>     <span class="err">=</span> <span class="s2">&quot;172.16.0.0/16&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>main.tf  </p>
+<div class="highlight"><pre><span></span><code><span class="err">resource</span> <span class="s2">&quot;aws_vpc&quot;</span> <span class="s2">&quot;my_vpc&quot;</span> <span class="p">{</span>
+<span class="err">cidr_block</span> <span class="err">=</span> <span class="err">var.vpc</span><span class="mi">-</span><span class="err">cidr</span>
+
+<span class="kc">ta</span><span class="err">gs</span> <span class="err">=</span> <span class="p">{</span>
+    <span class="err">Name</span> <span class="err">=</span> <span class="s2">&quot;tf-example&quot;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<p>執筆中…</p>
                 
-                <p>執筆中…</p>
+                  
                 
               
               

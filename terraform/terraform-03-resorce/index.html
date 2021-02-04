@@ -171,25 +171,9 @@
 
   <li class="md-tabs__item">
     <a href="../.." class="md-tabs__link">
-      Welcome to shiratama's Note.
+      Welcome
     </a>
   </li>
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../sample/test/" class="md-tabs__link">
-        Sample
-      </a>
-    </li>
-  
 
       
         
@@ -205,6 +189,22 @@
     <li class="md-tabs__item">
       <a href="../terraform-01-basic/" class="md-tabs__link md-tabs__link--active">
         Terraform
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/test/" class="md-tabs__link">
+        サンプル
       </a>
     </li>
   
@@ -252,51 +252,8 @@
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Welcome to shiratama's Note.
+        Welcome
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
-      
-      <label class="md-nav__link" for="nav-2">
-        Sample
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Sample" data-md-level="1">
-        <label class="md-nav__title" for="nav-2">
-          <span class="md-nav__icon md-icon"></span>
-          Sample
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../sample/test/" class="md-nav__link">
-        This is Test Page.
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -314,14 +271,14 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
       
-      <label class="md-nav__link" for="nav-3">
+      <label class="md-nav__link" for="nav-2">
         Terraform
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Terraform" data-md-level="1">
-        <label class="md-nav__title" for="nav-3">
+        <label class="md-nav__title" for="nav-2">
           <span class="md-nav__icon md-icon"></span>
           Terraform
         </label>
@@ -410,6 +367,20 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    参照
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    循環参照
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     変数
   </a>
   
@@ -429,7 +400,7 @@
   
     <li class="md-nav__item">
       <a href="../terraform-04-variables/" class="md-nav__link">
-        Terraform 04 variables
+        04_Variables
       </a>
     </li>
   
@@ -442,6 +413,49 @@
     <li class="md-nav__item">
       <a href="../terraform-99-link/" class="md-nav__link">
         99_リンク集
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
+        サンプル
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="サンプル" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          サンプル
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/test/" class="md-nav__link">
+        This is Test Page.
       </a>
     </li>
   
@@ -500,6 +514,20 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    参照
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    循環参照
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     変数
   </a>
   
@@ -520,9 +548,26 @@
                 
                 <h1 id="terraform-resource">Terraform - Resource</h1>
 <h2 id="_1">概要</h2>
-<p><code>main.tf</code>などresourceとして定義する内容について、詳細をまとめます</p>
+<p><code>main.tf</code>などでresourceとして構築するインフラストラクチャオブジェクトを定義する方法について、詳細をまとめます</p>
 <h2 id="_2">全体像</h2>
-<div class="highlight"><pre><span></span><code>
+<p>以下にVPCとsubnetを作成する例を示します  </p>
+<div class="highlight"><pre><span></span><code><span class="err">resource</span> <span class="s2">&quot;aws_vpc&quot;</span> <span class="s2">&quot;my_vpc&quot;</span> <span class="p">{</span>
+  <span class="err">cidr_block</span> <span class="err">=</span> <span class="s2">&quot;172.16.0.0/16&quot;</span>
+
+  <span class="kc">ta</span><span class="err">gs</span> <span class="err">=</span> <span class="p">{</span>
+    <span class="err">Name</span> <span class="err">=</span> <span class="s2">&quot;tf-example&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="err">resource</span> <span class="s2">&quot;aws_subnet&quot;</span> <span class="s2">&quot;my_subnet&quot;</span> <span class="p">{</span>
+  <span class="err">vpc_id</span>            <span class="err">=</span> <span class="err">aws_vpc.my_vpc.id</span>
+  <span class="err">cidr_block</span>        <span class="err">=</span> <span class="s2">&quot;172.16.10.0/24&quot;</span>
+  <span class="err">availabili</span><span class="kc">t</span><span class="err">y_zo</span><span class="kc">ne</span> <span class="err">=</span> <span class="s2">&quot;ap-northeast-1a&quot;</span>
+
+  <span class="kc">ta</span><span class="err">gs</span> <span class="err">=</span> <span class="p">{</span>
+    <span class="err">Name</span> <span class="err">=</span> <span class="s2">&quot;tf-example&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <h2 id="_3">基本構文</h2>
 <p><code>resource "&lt;リースの種類&gt;" "&lt;リソース名&gt;" {・・・}</code>の形式でリソースを定義します  </p>
@@ -542,21 +587,41 @@
 <p>{・・・}</p>
 <p>リソース毎にパラメータを記述します<br />
 構築したいリソースがどのようなパラメータを持つかはドキュメントを参照します<br />
-記述方法よりもTerraforn以前に構築対象をどれだけ理解できているかが重要です<br />
-実際に手動で構築してみて設定した内容とドキュメントのパラメータを照らし合わせるとより理解が進みます<br />
-なお、パラメータによってデフォルト値が定義されていますが、プロバイダ側のデフォルト値と異なるケースもあるので留意します  </p>
+記述方法よりも構築対象のことをどれだけ理解できているかが重要です<br />
+実際に手で構築してみて設定した内容とドキュメントのパラメータを照らし合わせるとより理解が進みます<br />
+なお、パラメータによってデフォルト値が定義されていますが、プロバイダ側のデフォルト値と異なるケースもあるので注意が必要です  </p>
 </li>
 </ol>
-<h2 id="_4">変数</h2>
+<h2 id="_4">参照</h2>
+<p><code>&lt;リソースの種類&gt;.&lt;リソース名&gt;.param</code>の形式でリソースのパラメータを参照できます<br />
+全体像で例示したように、構築するインフラストラクチャによっては依存関係が存在します  </p>
+<ul>
+<li>例）subnetを作成するには先にVPCを作成し、そのVPC-IDをパラメータとして渡す  </li>
+</ul>
+<p>こういったケースでは、依存先リソースのパラメータを指定する必要があり、そういった場面で参照を行います<br />
+Terraformは、記載されたリソースの依存関係を自動的に識別し、どのリソースから作成するかを自動的に判別/構築してくれます  </p>
+<p>ケースによっては、依存関係を明示する必要があるので、そうったケースでは<code>depends_on = &lt;リソースの種類&gt;.&lt;リソース名&gt;</code>というパラメータで先に構築すべきリソースを明言することも可能です</p>
+<ul>
+<li>例）セキュリティグループAはセキュリティグループBをインバウンドルールで許可する  </li>
+</ul>
+<h2 id="_5">循環参照</h2>
+<p>以下の例のようにお互いがお互いのリソースを参照するような場合、Terraformは循環参照としてエラーを返しリソースの構築ができないケースがあります  </p>
+<ul>
+<li>セキュリティグループAはセキュリティグループBをインバウンドで許可する  </li>
+<li>セキュリティグループBはセキュリティグループAをアウトバウンドで許可する</li>
+</ul>
+<p>このようなケースの場合、どちらのリソースを先に構築すべきかをTerraformが判別できず、エラーとなるので留意する必要があります<br />
+上記の例でいえば、  </p>
+<ol>
+<li>セキュリティグループA/Bにルールを指定せずに作成  </li>
+<li>作成したセキュリティグループにルールをあとから定義する  </li>
+</ol>
+<p>といったかたちで回避することができます<br />
+循環参照が発生した場合はなにがなにを参照しているかを確認し、相互依存しないようにリソースの定義を見直しましょう</p>
+<h2 id="_6">変数</h2>
 <p>リソースに指定するパラメータの値は変数を利用できます  <br />
 リソースと同一ファイル上で記述できますが、管理が煩雑になるために分離することが一般的です<br />
 変数についての詳細は、<a href="https://tama-shira.github.io/note/terraform/terraform-04-variables/">04_Variables</a>で説明します  </p>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1"></li>
-</ol>
-</div>
                 
                   
                 
@@ -598,7 +663,7 @@
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                Terraform 04 variables
+                04_Variables
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

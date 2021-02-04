@@ -171,25 +171,9 @@
 
   <li class="md-tabs__item">
     <a href="../.." class="md-tabs__link">
-      Welcome to shiratama's Note.
+      Welcome
     </a>
   </li>
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../sample/test/" class="md-tabs__link">
-        Sample
-      </a>
-    </li>
-  
 
       
         
@@ -205,6 +189,22 @@
     <li class="md-tabs__item">
       <a href="./" class="md-tabs__link md-tabs__link--active">
         Terraform
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/test/" class="md-tabs__link">
+        サンプル
       </a>
     </li>
   
@@ -252,51 +252,8 @@
   
     <li class="md-nav__item">
       <a href="../.." class="md-nav__link">
-        Welcome to shiratama's Note.
+        Welcome
       </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
-      
-      <label class="md-nav__link" for="nav-2">
-        Sample
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Sample" data-md-level="1">
-        <label class="md-nav__title" for="nav-2">
-          <span class="md-nav__icon md-icon"></span>
-          Sample
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../sample/test/" class="md-nav__link">
-        This is Test Page.
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -314,14 +271,14 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
       
-      <label class="md-nav__link" for="nav-3">
+      <label class="md-nav__link" for="nav-2">
         Terraform
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Terraform" data-md-level="1">
-        <label class="md-nav__title" for="nav-3">
+        <label class="md-nav__title" for="nav-2">
           <span class="md-nav__icon md-icon"></span>
           Terraform
         </label>
@@ -483,7 +440,7 @@
   
     <li class="md-nav__item">
       <a href="../terraform-04-variables/" class="md-nav__link">
-        Terraform 04 variables
+        04_Variables
       </a>
     </li>
   
@@ -496,6 +453,49 @@
     <li class="md-nav__item">
       <a href="../terraform-99-link/" class="md-nav__link">
         99_リンク集
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
+        サンプル
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="サンプル" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          サンプル
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/test/" class="md-nav__link">
+        This is Test Page.
       </a>
     </li>
   
@@ -749,7 +749,7 @@ $ export TF_VAR_secret_key=&quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;
 
     <span class="err">securi</span><span class="kc">t</span><span class="err">y_group_id</span> <span class="err">=</span> <span class="err">aws_securi</span><span class="kc">t</span><span class="err">y_group.allow_</span><span class="kc">tls</span><span class="err">.id</span>
 
-    <span class="err">depe</span><span class="kc">n</span><span class="err">ds_o</span><span class="kc">n</span> <span class="err">=</span> <span class="err">aws_securi</span><span class="kc">t</span><span class="err">y_group.allow</span>
+    <span class="err">depe</span><span class="kc">n</span><span class="err">ds_o</span><span class="kc">n</span> <span class="err">=</span> <span class="err">aws_securi</span><span class="kc">t</span><span class="err">y_group.allow_</span><span class="kc">tls</span>
 <span class="p">}</span>
 </code></pre></div>
 →作成したセキュリティグループ自身のIDをInboundルールに追加する例です</p>
@@ -895,7 +895,7 @@ $ terraform apply <span class="c1"># 実行</span>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../sample/test/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../.." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -904,7 +904,7 @@ $ terraform apply <span class="c1"># 実行</span>
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                This is Test Page.
+                Welcome
               </div>
             </div>
           </a>
