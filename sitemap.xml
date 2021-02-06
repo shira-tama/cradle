@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://tama-shira.github.io/</loc>
-     <lastmod>2021-02-04</lastmod>
+     <lastmod>2021-02-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://tama-shira.github.io/terraform/terraform-01-basic/</loc>
-     <lastmod>2021-02-04</lastmod>
+     <lastmod>2021-02-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://tama-shira.github.io/terraform/terraform-02-providers/</loc>
-     <lastmod>2021-02-04</lastmod>
+     <lastmod>2021-02-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://tama-shira.github.io/terraform/terraform-03-resorce/</loc>
-     <lastmod>2021-02-04</lastmod>
+     <lastmod>2021-02-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://tama-shira.github.io/terraform/terraform-04-variables/</loc>
-     <lastmod>2021-02-04</lastmod>
+     <lastmod>2021-02-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://tama-shira.github.io/terraform/terraform-99-link/</loc>
-     <lastmod>2021-02-04</lastmod>
+     <lastmod>2021-02-06</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://tama-shira.github.io/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/test/</loc>
-     <lastmod>2021-02-04</lastmod>
+     <lastmod>2021-02-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
