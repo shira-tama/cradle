@@ -586,7 +586,7 @@
 </ol>
 <h2 id="_4"><i class="fas fa-angle-double-right"> 変数の更新</i></h2>
 <p><code>variavles "&lt;変数名&gt;" {・・・}</code>の形式で定義した変数はデフォルト値です<br />
-よって、後続の処理の変数の値を変更（デフォルト値からの上書き）が可能です  </p>
+よって、後続処理にて、変数の値を変更（デフォルト値からの上書き）が可能です  </p>
 <ol>
 <li>
 <p>コマンド実行時にオプション指定で更新する<br />
@@ -607,10 +607,11 @@ $ <span class="nb">export</span> <span class="nv">TF_VAR_secret_key</span><span 
 <p>ファイルで更新する<br />
 <code>terraform.tfvars</code>というファイルを作成し、<code>&lt;変数名&gt; = "&lt;値&gt;"</code>で更新した変数を指定することもできます<br />
 環境変数同様にterraformコマンド実行時に自動で読み込まれます  </p>
-<div class="highlight"><pre><span></span><code>■terraform.tfvars
-
-vpc-cidr=192.168.0.0/16
-</code></pre></div>
+<ul>
+<li>terraform.tfvars<br />
+    <div class="highlight"><pre><span></span><code>vpc-cidr=192.168.0.0/16
+</code></pre></div></li>
+</ul>
 </li>
 </ol>
                 
