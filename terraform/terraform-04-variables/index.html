@@ -378,6 +378,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+     変数の更新
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -492,6 +499,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+     変数の更新
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -568,6 +582,35 @@
 構築作業実施、コマンドの引数や別ファイルを利用して上書き可能です  </p>
 </li>
 </ol>
+</li>
+</ol>
+<h2 id="_4"><i class="fas fa-angle-double-right"> 変数の更新</i></h2>
+<p><code>variavles "&lt;変数名&gt;" {・・・}</code>の形式で定義した変数はデフォルト値です<br />
+よって、後続の処理の変数の値を変更（デフォルト値からの上書き）が可能です  </p>
+<ol>
+<li>
+<p>コマンド実行時にオプション指定で更新する<br />
+terraformコマンドのオプションで<code>-var '&lt;変数名&gt;=&lt;値&gt;'</code>と指定することで変数に値を更新することができます  </p>
+<div class="highlight"><pre><span></span><code>$ terraform apply <span class="se">\</span>
+-var <span class="s1">&#39;vpc-cidr=192.168.0.0/16&#39;</span>
+</code></pre></div>
+</li>
+<li>
+<p>環境変数で更新する<br />
+認証用のアクセスキー / シークレットアクセスキーなど、コマンド実行時の引数に設定しにくい変数の場合に利用する<br />
+<code>TF_VAR_&lt;変数名&gt;</code>という名前の環境変数を事前定義することで、terraformコマンド実行時に自動で読み込まれます  </p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">export</span> <span class="nv">TF_VAR_access_key</span><span class="o">=</span><span class="s2">&quot;AKIAXXXXXXXXXXXXXXXXXX&quot;</span>
+$ <span class="nb">export</span> <span class="nv">TF_VAR_secret_key</span><span class="o">=</span><span class="s2">&quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;</span>
+</code></pre></div>
+</li>
+<li>
+<p>ファイルで更新する<br />
+<code>terraform.tfvars</code>というファイルを作成し、<code>&lt;変数名&gt; = "&lt;値&gt;"</code>で更新した変数を指定することもできます<br />
+環境変数同様にterraformコマンド実行時に自動で読み込まれます  </p>
+<div class="highlight"><pre><span></span><code>■terraform.tfvars
+
+vpc-cidr=192.168.0.0/16
+</code></pre></div>
 </li>
 </ol>
                 
